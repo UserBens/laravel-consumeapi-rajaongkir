@@ -33,14 +33,15 @@ Route::get('/list-provinsi', function () {
 });
 
 Route::get('/list-kota', function () {
-    $response = Http::withHeaders([
-        'key' => '04f2294c1ff50fc8b1906080f8d9cafc'
-    ])->get('https://api.rajaongkir.com/starter/city');
+    // $response = Http::withHeaders([
+    //     'key' => '04f2294c1ff50fc8b1906080f8d9cafc'
+    // ])->get('https://api.rajaongkir.com/starter/city');
 
-    $city = $response->json()['rajaongkir']['results']; 
+    // $city = $response->json()['rajaongkir']['results']; 
 
-    dd($city);
+    // dd($city);
     // dd($response->json()['rajaongkir']['results']);
 });
 
 Route::get('/cek-ongkir', [OngkirController::class, 'index']);
+Route::post('/cek-ongkir', [OngkirController::class, 'cekOngkir']);
